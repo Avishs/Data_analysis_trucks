@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Delhi tollpoints_updated_2025</name>
+    <description><![CDATA[A mapping of all 156 toll-points around Delhi<br>(major toll-points marked in orange)]]></description>
+    <Style id="icon-1899-7CB342-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-7CB342-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-7CB342">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-7CB342-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-7CB342-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-7CB342-nodesc-normal">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-7CB342-nodesc-highlight">
+      <IconStyle>
+        <color>ff42b37c</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-7CB342-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-7CB342-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-7CB342-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-F9A825-normal">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-F9A825-highlight">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-F9A825">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-F9A825-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-F9A825-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-F9A825-nodesc-normal">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-F9A825-nodesc-highlight">
+      <IconStyle>
+        <color>ff25a8f9</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-F9A825-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-F9A825-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-F9A825-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name><![CDATA[Medium & Minor Tollpoints.xlsx]]></name>
+      <Placemark>
+        <name>Mandouli Main</name>
+        <address>Mandouli Main Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Nehar Naka</name>
+        <address>Nehar Naka Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Nizampur 2nd</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.9579382,28.7210416,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wazirabad</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            77.2546233,28.7419938,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tugalkabad</name>
+        <address>Tugalkabad Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Vasundhra 1st</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            77.3273017,28.5994992,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sewa Dham</name>
+        <address>Sewa Dham Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Mandoli More</name>
+        <address>Mandoli More Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jhatikara</name>
+        <address>Jhatikara Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Auchandi-1</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.98609,28.8296532,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Surya Nagar (Tentative)</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            77.3234526,28.670467,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>New Seemapuri 3rd</name>
+        <address>New Seemapuri 3rd Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Lampur</name>
+        <address>Lampur Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Harewali-1</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            77.0226118,28.8284592,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Darola Border</name>
+        <address>Darola Border Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Nanakheri-1</name>
+        <address>Nanakheri-1 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Krawal Nagar</name>
+        <address>Krawal Nagar Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Nizampur 1st</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.9565331,28.7142694,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mungeshpur-I</name>
+        <address>Mungeshpur-I Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jaitpura-4</name>
+        <address>Jaitpura-4 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>New Seemapuri 2nd</name>
+        <address>New Seemapuri 2nd Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Singhu School</name>
+        <address>Singhu School Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jaitpura</name>
+        <address>Jaitpura Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Saboli Road</name>
+        <address>Saboli Road Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Mayur Vihar CNG</name>
+        <address>Mayur Vihar CNG Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Kapashera Bypass</name>
+        <address>Kapashera Bypass Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Johripur 1st</name>
+        <address>Johripur 1st Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jaitpura-3</name>
+        <address>Jaitpura-3 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Kair Naka</name>
+        <address>Kair Naka Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Mayur Vihar Phase-3</name>
+        <address>Mayur Vihar Phase-3 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Bakkargarh</name>
+        <address>Bakkargarh Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jharoda-2</name>
+        <address>Jharoda-2 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Kutabgarh-3</name>
+        <address>Kutabgarh-3 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jounti-2</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.9582686,28.7540401,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Johripur 2nd</name>
+        <address>Johripur 2nd Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Mandoli 2nd</name>
+        <address>Mandoli 2nd Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Auchandi-2</name>
+        <address>Auchandi-2 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Kapashera CNG</name>
+        <address>Kapashera CNG Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Darola Border-2</name>
+        <address>Darola Border-2 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Bankner</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            77.0723416,28.8507331,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Punjabkhor-1</name>
+        <address>Punjabkhor-1 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Mundela Kalan</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.8833401,28.6197508,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kundli-1</name>
+        <address>Kundli-1 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Dewar Khana</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.8363411,28.530889,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kutabgarh-2</name>
+        <address>Kutabgarh-2 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jaitpura-2</name>
+        <address>Jaitpura-2 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Tajpur</name>
+        <address>Tajpur Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Badshah Galibpur</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.8838799,28.5314162,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jounti-1</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.955715,28.7545311,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>lshapur</name>
+        <address>lshapur Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Ishapur-2</name>
+        <address>Ishapur-2 Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Jhillmill</name>
+        <address>Jhillmill Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Dhansa Border</name>
+        <address>Dhansa Border Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>New Seemapuri 1st</name>
+        <address>New Seemapuri 1st Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Kundli-2</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            77.1054624,28.8705165,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Loni Main</name>
+        <address>Loni Main Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Bajghera</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            77.0129423,28.5429222,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pul Prahladhpur</name>
+        <address>Pul Prahladhpur Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Badarpur/Lakkarpur Toll</name>
+        <address>Badarpur/Lakkarpur Toll</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Booth - Surajkund</name>
+        <address>MCD Toll Booth - Surajkund</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Delhi Toll - Vasundhra 2nd</name>
+        <address>Delhi Toll - Vasundhra 2nd</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD toll booth</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.0482268,28.5209123,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Tax</name>
+        <address>MCD Toll Tax Old Bijwasan/Palam Vihar</address>
+        <description>Old Bijwasan/Palam Vihar</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Gazipur Sabji Mandi</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3236684,28.6341729,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Loni Boder MCD Toll Tax Booth</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.2916162,28.7031573,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - New Bijwasan</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.0711628,28.518738,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Palam Vihar</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.0442971,28.5240482,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaze - Mandi More (Mandi Dera) </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.1889409,28.4214072,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Palam Bypass</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.0521935,28.5319661,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - B150 Shani Mandir </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3027125,28.492004,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Nanakheri - 3</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9834937,28.5169886,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Ballabgarh</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.2360621,28.4096096,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Plaza - Sector-37 </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3058144,28.4747027,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Plaza - Sector-37(2)  </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3060099,28.4745793,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Plaza - Sector-37(3) </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3054407,28.4745527,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Plaza - Sector-37(4) </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3049789,28.4745778,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Plaza - Sector-37(5) </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3057221,28.4727735,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Durga Builder/Jaitpur-V</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3172831,28.486188,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Kalindi Kunj Machine/Jaitpur-V toll plaza</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3328506,28.4990213,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Tax Pushta Road Karawal Nagar</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.260348,28.7340167,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Tax Sonia Vihar</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.2473527,28.7389918,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ramprastha (Tentative)</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.320385,28.6591852,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>EDM Mall MCD Toll Tax</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3173626,28.6403529,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>C.R.P.F. Toll Plaza Delhi (Tentative)</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3412067,28.6108544,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Noida Major</name>
+        <address>Noida Major Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Nahar 2nd MCD Toll Tax</name>
+        <address>Nahar 2nd MCD Toll Tax Nehar Naka 2nd (Tentative)</address>
+        <description>Nehar Naka 2nd (Tentative)</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza -Mithapur (NH Road)</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3168862,28.4860655,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Karawal Nagar-II (Tentative)</name>
+        <address>Karawal Nagar-II (Tentative) west, P7MG+RGX, mandi wala Road, near toll tax, Kamal Vihar Extn, Kamal Vihar, Karawal Nagar, Delhi, 110094
++91 78360 90068</address>
+        <description><![CDATA[west, P7MG+RGX, mandi wala Road, near toll tax, Kamal Vihar Extn, Kamal Vihar, Karawal Nagar, Delhi, 110094<br>+91 78360 90068]]></description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>SABJI MANDI MCD TOLL NAAKA</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3219702,28.6367513,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>M.C.D. Toll Plaza - Punjab Khor - 2nd</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9612564,28.7779145,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Tax plaza - Qutubagh</name>
+        <address>Toll Tax plaza - Qutubagh</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza Badshah Ghalibpur-Il</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.8769384,28.5255154,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza Badshah Ghalibpur-3
+</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.8874312,28.5198783,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mungeshpur-II</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9741278,28.8249544,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mungeshpur-III</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9658022,28.8260448,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Surkhpur</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.94306,28.6272378,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Dewar Khana 2</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.8415982,28.5363935,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Plaza - Mundhela Kalan 2</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.8905929,28.6226138,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll Plaza - Mundhela Kalan 3</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.898146,28.6259288,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Kair Naka-Il</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9076509,28.6254304,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Jharoda 1st MCD Toll</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9421354,28.6670208,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Toll booth</name>
+        <description>Jarodha 3?</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.9408511,28.6684417,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Issapur </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.864539,28.5824868,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Issapur</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.8503341,28.5754018,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nizampur 3</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9534104,28.7201383,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sainik School </name>
+        <description>Bahadurgarh Delhi</description>
+        <styleUrl>#icon-1899-7CB342</styleUrl>
+        <Point>
+          <coordinates>
+            76.9458829,28.6694841,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Safiabad, Narela</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.0810543,28.8716651,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Jharoda Border </name>
+        <address>MCD Toll Plaza - Jharoda Border </address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Jharoda Border Floyover</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9458289,28.6607517,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Jharoda Border Exit </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9358297,28.6675298,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD - Jharoda Border 4</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9456358,28.661599,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Jharoda Border 5</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.9349714,28.6669649,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Shahdara Flyover</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.2922967,28.6996808,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>M. C. D. Toll Tax Plaza - 02 - Harewali, Delhi</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.0240364,28.8296733,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>TOLL DELHI-NOIDA Ashok Nagar</name>
+        <address>TOLL DELHI-NOIDA Ashok Nagar</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Toll Delhi UP New Kondli</name>
+        <address>Toll Delhi UP New Kondli</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>mcd toll plaza singhu border Singhu Village</name>
+        <address>mcd toll plaza singhu border Singhu Village</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD TOLL PLAZA - Zero Palla (Tentative)</name>
+        <address>MCD TOLL PLAZA - Zero Palla (Tentative)</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll PLaza- Indrapuri </name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.2836335,28.7263372,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Shahdara 3</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3141992,28.699479,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Points - Ramorastha 2</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3218478,28.6512886,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gurgaon Faridabad Toll Plaza, Bhandwari </name>
+        <address>Gurgaon Faridabad Toll Plaza, Bhandwari </address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Plaza - Mohan Nagar</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3638818,28.674701,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ashok Nagar</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3034055,28.6981629,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Auchandi, 3</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.98606,28.8292595,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Janti Khurd</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.1436676,28.841285,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Janti Khurd,2</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.1604047,28.8427135,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>CNG MCD Toll booth, KGT Main (CNG Point)</name>
+        <address>CNG MCD Toll booth, KGT Main (CNG Point)</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>New kundli 3</name>
+        <address>New kundli 3</address>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Lampur</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.0593246,28.8516453,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mungeshpur</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            76.973012,28.8169082,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll-Indrapuri 2</name>
+        <styleUrl>#icon-1899-7CB342-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.2831149,28.7275159,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Major tollpoints.xlsx</name>
+      <Placemark>
+        <name>Kapashera Main</name>
+        <address>Kapashera Main Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Badarpur-2</name>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            77.3040376,28.4901756,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Badarpur Main-HCC</name>
+        <address>Badarpur Main-HCC Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>DND Flyway</name>
+        <address>DND Flyway Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Tikri Main</name>
+        <address>Tikri Main Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>KGT Main</name>
+        <address>KGT Main Delhi</address>
+        <description>Delhi</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>Gazipur toll Delhi</name>
+        <address>Gazipur toll Delhi</address>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Tax Booth-Apsara Border</name>
+        <address>MCD Toll Tax Booth-Apsara Border This might be Shahdara</address>
+        <description>This might be Shahdara</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Booth-Bhopura Border</name>
+        <description>Unsure if Wazirabad or Shahdara</description>
+        <styleUrl>#icon-1899-F9A825</styleUrl>
+        <Point>
+          <coordinates>
+            77.3228875,28.6984349,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Delhi MCD Toll - Gazipur Major Old</name>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3289818,28.6298085,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gazipur Old MCD Toll Tax</name>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.3289981,28.6308028,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Municipal Corporation Department HooliganismToll (MCD Tax) - Rajokri/Rajoukri</name>
+        <address>Municipal Corporation Department HooliganismToll (MCD Tax) - Rajokri/Rajoukri</address>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+      </Placemark>
+      <Placemark>
+        <name>MCD TOLL BOOTH, Ayanagar Border</name>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            77.1168566,28.4810851,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>MCD Toll Tax Booth U.P - Kalindi Kunj</name>
+        <address>MCD Toll Tax Booth U.P - Kalindi Kunj</address>
+        <styleUrl>#icon-1899-F9A825-nodesc</styleUrl>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
