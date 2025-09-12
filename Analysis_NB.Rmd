@@ -5,8 +5,8 @@ author:
 - APAG
 date: "`r Sys.Date()`"
 output:
-  pdf_document: default
   html_notebook: default
+  pdf_document: default
 ---
 
 ```{r}
@@ -171,7 +171,7 @@ weekend_days <- MCD_truck %>%
 
 # Build shaded regions for weekends
 weekend_rects <- weekend_days %>%
-  mutate(xmin = day - 0.5, xmax = day + 0.5,
+  mutate(xmin = day - 0.5, xmax =      day + 0.5,
          ymin = -Inf, ymax = Inf)
 
 ggplot(daily_flow, aes(x = Date, y = Trips)) +
@@ -1362,10 +1362,11 @@ survey_data <-
 # Improve some Origin locations
 survey_data <-
   survey_data %>% 
-  mutate(Origin = ifelse(str_detect(Origin, "Gurgaon"), "Gurugram", Origin)) %>% 
+  mutate(Origin = ifelse(str_detect(Origin, "Gurgaon"),   "Gurugram", Origin)) %>% 
   mutate(Origin = ifelse(str_equal(Origin,"Hariyana"), "Haryana", Origin)) %>% 
-  mutate(Origin = ifelse(str_detect(Origin, "dnd|noida", ignore_case=TRUE),
-                         "Noida",Origin)) %>% 
+  mutate(Origin = ifelse(str_detect(Origin, "dnd|noida"),
+                         "Noida",
+                         Origin))
   
 
 # correct fuel type
