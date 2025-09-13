@@ -5,8 +5,10 @@ author:
 - APAG
 date: "`r Sys.Date()`"
 output:
-  html_notebook: default
-  pdf_document: default
+  html_notebook:
+    toc: true
+    toc_float: true
+    number_sections: true
 ---
 
 ```{r}
@@ -18,6 +20,8 @@ setwd(script_path)
 library(tidyverse)
 library(readxl)
 library(ggraph)
+library(knitr)
+library(kableExtra)
 ```
 
 # Truck Traffic Patterns in Delhi: Insights from RFID Toll Data
@@ -1366,7 +1370,8 @@ survey_data <-
   mutate(Origin = ifelse(str_equal(Origin,"Hariyana"), "Haryana", Origin)) %>% 
   mutate(Origin = ifelse(str_detect(Origin, "dnd|noida"),
                          "Noida",
-                         Origin))
+                         Origin)) %>% 
+  
   
 
 # correct fuel type
@@ -1376,7 +1381,10 @@ survey_data <-
   select(-`Fule Type`)
 
 # registration number to caps
-survey_data$`Full Reg No` <- str_to_upper(survey_data$`Full Reg No`)
+survey_data<-
+  survey_data %>% 
+  mutate(`Full Reg No` = str_to_upper(`Full Reg No`)) %>% 
+  filter(`Full Reg No`!=0)
 axle_loads$`Full Reg No`  <- str_to_upper(axle_loads$`Full Reg No`)
 
 
@@ -1400,17 +1408,213 @@ survey_data<-
 
 Distribution <-
   survey_data %>% 
-  group_by(`Location Name`, Direction, Sfift) %>% 
+  group_by(`Location Name`, Direction_bin) %>% 
+  distinct(`Full Reg No`, .keep_all = TRUE) %>% 
   summarize(count = n()) %>% 
-  pivot_wider(names_from = Sfift, values_from = count, values_fill = 0)
+  pivot_wider(names_from = Direction_bin, values_from = count, values_fill = 0)
 
-# Create the pie chart
+# Table
+knitr::kable(Distribution, caption = "Distribution of trucks surveyed by Toll Plaza and Direction of travel")
+```
+
+
+```{r}
+temp <-
+  survey_data %>% 
+  group_by(`Location Name`) %>% 
+  distinct(`Full Reg No`, .keep_all = TRUE) %>% 
+  summarize(count = n(), .groups="drop") %>% 
+  mutate(Percentage = round(count*100/sum(count),1)) %>% 
+  select(-count) %>% 
+  arrange(-Percentage)
+
+kable(temp)
+```
+
+
+```{r}
+temp <-
+  survey_data %>% 
+  group_by(Direction_bin) %>% 
+  distinct(`Full Reg No`, .keep_all = TRUE) %>% 
+  summarise(count = n(), .groups = "drop") %>% 
+  mutate(Percentage = round(count*100/sum(count),1)) %>% 
+  select(-count) %>% 
+  rename("Direction"="Direction_bin")
+
+kable(temp)
 ```
 
 ```{r}
+temp <-
+  survey_data %>% 
+  group_by(`Full Reg No`) %>%
+  distinct(`Location Name`, .keep_all = TRUE) %>% 
+  summarise(count = n())
+
+#kable(temp)
+# avg no. of locations per truck
+print(sum(temp$count)/nrow(temp))
+
+# % of trucks seen at multiple locations
+temp<-
+  survey_data %>% 
+  group_by(`Full Reg No`) %>% 
+  distinct(`Location Name`, .keep_all = TRUE) %>% 
+  summarise(count = n()) %>% 
+  filter(count>1)
+
+print(nrow(temp)*100/length(unique(survey_data$`Full Reg No`)))
+
+# % of trucks seen going in multiple directions
+temp<-
+  survey_data %>% 
+  group_by(`Full Reg No`) %>% 
+  distinct(Direction_bin, .keep_all = TRUE) %>% 
+  summarise(count = n()) %>% 
+  filter(count>1)
+
+print(nrow(temp)*100/length(unique(survey_data$`Full Reg No`)))
+
+```
+```{r}
 # Timing - shift 
 table(survey_data$Sfift)
+temp <-
+  survey_data %>% 
+  group_by(Sfift) %>% 
+  distinct(`Full Reg No`, .keep_all = TRUE) %>% 
+  summarise(count = n()) %>% 
+  rename("Shift"="Sfift") %>% 
+  mutate(Percent = round(count*100/sum(count),1)) %>% 
+  arrange(-Percent)
+
+kable(temp)
+
 ```
+
+```{r}
+# average number of shifts per truck
+temp <-
+  survey_data %>% 
+  group_by(`Full Reg No`) %>% 
+  distinct(Sfift, .keep_all = TRUE) %>% 
+  summarise(count=n())
+
+print(sum(temp$count)/nrow(temp))
+
+#average number by reg state might also be interesting?
+```
+
+```{r}
+# average time between repeat entries
+temp <-
+  survey_data %>% 
+  add_count(`Full Reg No`) %>% 
+  filter(n>1)
+
+# now get the timestamps using the images, so that i can answer this question.
+  
+
+```
+
+
+```{r}
+# Percentage of trucks in multiple shifts
+temp<-
+  survey_data %>% 
+  group_by(`Full Reg No`) %>% 
+  distinct(Sfift, .keep_all = TRUE) %>% 
+  summarise(count = n()) %>% 
+  filter(count>1)
+
+print(nrow(temp)*100/length(unique(survey_data$`Full Reg No`)))
+
+```
+
+
+```{r}
+# avg no, of truck entries per truck by type
+temp <-
+  survey_data %>% 
+  group_by(`Vehicle Type`) %>% 
+  summarise(count=n(), .groups = "drop") %>% 
+  mutate(Percent = round(count*100/sum(count),1))
+
+kable(temp)
+
+# same, but unique
+temp <-
+  survey_data %>% 
+  group_by(`Vehicle Type`) %>% 
+  distinct(`Full Reg No`, .keep_all = TRUE) %>% 
+  summarise(count=n(), .groups = "drop") %>% 
+  mutate(Percent = round(count*100/sum(count),1))
+
+kable(temp)
+
+```
+
+```{r}
+# average no. of entries per truck by type
+temp <-
+  survey_data %>%
+  #filter(Direction_bin=="In") %>% 
+  add_count(`Full Reg No`) %>%
+  select(`Full Reg No`, n, `Vehicle Type`) %>% 
+  distinct() %>% 
+  select(-`Full Reg No`) %>% 
+  add_count(`Vehicle Type`) %>% 
+  group_by(`Vehicle Type`) %>% 
+  summarise(`Average entries` = round(sum(n)/nn, 2)) %>% 
+  distinct()
+  
+kable(temp)
+
+# would be nicer as a distribution
+
+```
+
+
+```{r}
+# Percentage of trucks seen once, 2-5, 5-10, 10+ times by type
+
+temp <-
+  survey_data %>% 
+  group_by(`Full Reg No`, `Vehicle Type`) %>% 
+  summarise(count = n()) %>%
+  group_by(`Vehicle Type`, count) %>% 
+  summarize(trucks = n()) %>% 
+  pivot_wider(names_from = `Vehicle Type`, values_from = trucks, values_fill = 0)
+
+kable(temp)
+
+temp <-
+  temp %>% 
+  mutate(across(-count, ~ round(.x / sum(.x) * 100, 2))) 
+
+kable(temp)
+
+```
+
+```{r}
+#1. Avg. no. of entries per unique truck (entries divided by unique trucks)
+print(nrow(survey_data)/length(unique(survey_data$`Full Reg No`)))
+#2. % of trucks seen once, 2-5, 5-10, 10+ times
+temp <-
+  survey_data %>% 
+  group_by(`Full Reg No`) %>% 
+  summarize(count = n()) %>% 
+  group_by(count) %>% 
+  summarise(n = n()) %>% 
+  mutate(`%` = round(n*100/sum(n), 2))
+
+kable(temp)
+
+#3. Share of traffic generated by top 10% most frequent trucks (share of trucks vs share of trips)
+#4. Avg. time between consecutive entries per truck
+```
+
 
 ```{r}
 # pie charts of the vehicle fuel types
@@ -1419,10 +1623,7 @@ fuel_type <-
   distinct(`Full Reg No`, .keep_all = TRUE) %>% 
   group_by(Fuel_Type , `Vehicle Type`) %>%
   summarise(count = n(), .groups = "drop")
-```
 
-
-```{r}
 # --- 1. Fuel Type distribution ---
 fuel_summary <- fuel_type %>%
   group_by(Fuel_Type) %>%
@@ -1441,15 +1642,19 @@ ggplot(fuel_summary, aes(x = "", y = count, fill = Fuel_Type)) +
 
 ```{r}
 # --- 2. Vehicle Class distribution ---
-vehicle_summary <- fuel_type %>%
+vehicle_summary <- 
+    fuel_type %>%
   group_by(`Vehicle Type` ) %>%
+  distinct( )
   summarise(count = sum(count), .groups = "drop") %>%
-  mutate(prop = count / sum(count) * 100)
+  mutate(Percent = round(count *100 / sum(count),1))
+
+kable(vehicle_summary)
 
 ggplot(vehicle_summary, aes(x = "", y = count, fill = `Vehicle Type`)) +
   geom_col(color = "white") +
   coord_polar(theta = "y") +
-  geom_text(aes(label = paste0(round(prop, 1), "%")),
+  geom_text(aes(label = paste0(round(Percent, 1), "%")),
             position = position_stack(vjust = 0.5), color = "white") +
   theme_void() +
   labs(title = "Vehicle Class Distribution")
@@ -1496,7 +1701,7 @@ origin_state <-
   group_by(OState) %>% 
   summarize(count= n(), .groups = "drop") %>%
   mutate(prop = count / sum(count) * 100)%>%
-  mutate(or_state = ifelse(prop<1, "Other", Origin_State)) %>% 
+  mutate(or_state = ifelse(prop<1, "Other", OState)) %>% 
   group_by(or_state) %>% 
   summarize(count = sum(count), .groups = "drop") %>%
   mutate(prop = count / sum(count) * 100)
@@ -1517,6 +1722,39 @@ ggplot(origin_state, aes(x = reorder(or_state, -count), y = count, fill = or_sta
     axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
   )
 ```
+```{r}
+# % distribution by origin city 
+
+
+# 1 - top 20 cities with the 
+
+temp <-
+  survey_data %>% 
+  mutate(Origin = ifelse(Origin==OState, "city unknown", Origin)) %>% 
+  #mutate(Origin = ifelse(Direction_bin=="Out", "Delhi", Origin)) %>% 
+  filter(Direction_bin=="In") %>% 
+  group_by(Origin) %>% 
+  distinct(`Full Reg No`, .keep_all = TRUE) %>% 
+  summarize(n = n(), .groups = "drop") %>%
+  mutate(`.  %  .` = round(n*100/sum(n),1)) %>% 
+  arrange(-`.  %  .`) %>% 
+  filter(Origin!="city unknown") %>% 
+  mutate(`% known` = round(n*100/sum(n),1)) %>% 
+  head(20)
+
+kable(temp)
+```
+
+```{r}
+# average number of entries per truck per city
+
+
+# % trucks repeating same origin vs multiple origins
+```
+
+```{r}
+
+```
 
 
 ```{r}
@@ -1524,7 +1762,7 @@ ggplot(origin_state, aes(x = reorder(or_state, -count), y = count, fill = or_sta
 
 destinations_delhi <- 
   survey_data %>% 
-  filter(Dest_State=="Delhi") %>% 
+  filter(DState=="Delhi") %>% 
   group_by(Destination) %>% 
   summarize(count = n(), .groups = "drop") %>% 
   mutate(prop = count / sum(count) * 100) %>% 
@@ -1550,29 +1788,10 @@ ggplot(destinations_delhi, aes(x = reorder(Destination, -count), y = count, fill
 
 ```
 
-
-```{r}
-
-# If Destination in Delhi, then where?
-
-DL_dest <- 
-  survey_data %>% 
-  filter(DState=="Delhi") %>% 
-  group_by(`Location Name`, Destination) %>% 
-  summarize(count = n()) %>% 
-  pivot_wider(names_from = `Location Name`, values_from = count, values_fill = 0)
-
-
-
-
-```
-
-
 ```{r}
 
 # Fuel type
-
-
+table(survey_data$Fuel_Type)
 ```
 
 
@@ -1585,6 +1804,9 @@ bs_norms <-
   mutate(`BS norms` = paste("BS", as.roman(`BS norms`))) %>% 
   group_by(`BS norms`, Fuel_Type) %>% 
   summarize(count = n())
+
+
+kable(bs_norms %>% pivot_wider(names_from = Fuel_Type, values_from = count, values_fill = 0))
 
 ggplot(bs_norms, aes(x = factor(Fuel_Type), y = count, fill = `BS norms`)) +
   geom_col(position = "dodge") +
@@ -1614,11 +1836,14 @@ ggplot(bs_norms, aes(x = factor(Fuel_Type), y = count, fill = `BS norms`)) +
 
 age_fuel <- survey_data %>% 
   mutate(Age = 2025 - `Registration year`) %>% 
-  group_by(Fuel_Type, Age) %>% 
+  group_by(Fuel_Type , Age) %>% 
   summarise(count = n(), .groups = "drop") %>% 
   group_by(Fuel_Type) %>% 
-  mutate(prop = round(count / sum(count) * 100),1) %>% 
+  mutate(prop = round(count / sum(count) * 100,1)) %>% 
   pivot_wider(names_from = Fuel_Type, values_from = count, values_fill = 0)
+
+
+kable(age_fuel)
 
 ggplot(age_fuel, aes(x = Age, y = prop, fill = Fuel_Type)) +
   # change into line graph
@@ -1658,8 +1883,21 @@ ggplot(age_fuel, aes(x = Age, y = prop, fill = Fuel_Type)) +
 
 ```{r}
 # Daily distance traveled
-hist(survey_data$`Daily distance travelled`)
-# coupled with axle range
+
+temp <-
+  survey_data %>% 
+  group_by(`Daily distance travelled`, `Vehicle Type`) %>% 
+  summarize(count=n()) %>%
+  mutate(totaldist = `Daily distance travelled`*count) %>% 
+  group_by(`Vehicle Type`) %>% 
+  summarise(count=sum(count), 
+            distance = sum(totaldist)) %>% 
+  mutate(Average_Distance = 
+           round(distance/count,1)) %>% 
+  select(`Vehicle Type`, Average_Distance)
+
+kable(temp)
+  
 
 ```
 
@@ -1670,68 +1908,46 @@ temp <-
   survey_data %>% 
   group_by(`Commodity Type`) %>% 
   summarize(count = n(), .groups = "drop") %>%
+  filter(count>20) %>% 
+  filter(`Commodity Type`!= "Empty") %>% 
   mutate(prop = count / sum(count) * 100)
 
 ggplot(temp, aes(x = reorder(`Commodity Type`, -count), y = count, fill = `Commodity Type`)) +
   geom_col(color = "white") +
-  geom_text(aes(label = paste0(round(prop, 1), "%")),
-            vjust = -0.5, color = "black") +
+  geom_text(aes(label = paste0(round(prop), "%")),
+            vjust = -0.5, color = "black", size = 2) +
   theme_minimal() +
   labs(
     title = "Commodity Distribution",
     x = "Commodity",
     y = "Count"
   ) +
-  theme(legend.position = "none")
+  theme(
+    legend.position = "none",
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)
+  )
 
 ```
 
-```{r}
-# Trying out some text analysis
-# https://bookdown.org/tianyuan09/ai4ph2022/tutorial.html
-library(readr)
-# a collection of package for data wrangling.
-library(tidyverse)
-# package for text processing
-library(tidytext)
-# collection of packages for modeling and L 
-library(tidymodels)
-library(scales)
-# R package for managing and analyzing textual data
-library(quanteda)
-# An R package with word stemming algorithm
-# collapsing words to a common root to aid comparison of vocabular. 
-library(SnowballC)
-# library for topic models (LDA)
-library(topicmodels)
-# text recipe
-library(textrecipes)
-# dealing with imbalance data using `step_downsample or upsample`.
-library(themis)
-# https://github.com/tidymodels/discrim
-library(discrim)
-# framework for constructing variable importance plots from ML models
-library(vip)
-```
 
 ```{r}
 # destination state
 
 dest_state <-
   survey_data %>% 
-  group_by(Dest_State) %>% 
+  group_by(DState) %>% 
   summarize(count = n(), .groups = "drop") %>% 
-  mutate(prop = count / sum(count) * 100) %>% 
-  mutate(Dest_State =ifelse(prop<0.5,"Other", Dest_State)) %>% 
-  group_by(Dest_State) %>% 
+  mutate(prop = count *100 / sum(count)) %>% 
+  mutate(DState =ifelse(prop<0.5,"Other", DState)) %>% 
+  group_by(DState) %>% 
   summarize(count = sum(count), .groups = "drop") %>%
   mutate(prop = count / sum(count) * 100)
 
-ggplot(dest_state, aes(x = reorder(Dest_State, -count), y = count, fill = Dest_State)) +
+ggplot(dest_state, aes(x = reorder(DState, -count), y = count, fill = DState)) +
   geom_col(color = "white") +
   geom_text(aes(label = paste0(round(prop, 1), "%")),
             vjust = -0.5, color = "black") +
-  ylim(0,2000)+
+  ylim(0,4500)+
   theme_minimal() +
   labs(
     title = "Destination State Distribution",
@@ -1749,8 +1965,6 @@ ggplot(dest_state, aes(x = reorder(Dest_State, -count), y = count, fill = Dest_S
 ```{r}
 # Maintenance frequency
 
-
-
 ```
 
 
@@ -1761,6 +1975,7 @@ ggplot(dest_state, aes(x = reorder(Dest_State, -count), y = count, fill = Dest_S
 
 ```{r}
 # bar graph at city origin level
+
 ```
 
 
@@ -1812,6 +2027,7 @@ ggplot(dest_state, aes(x = reorder(Dest_State, -count), y = count, fill = Dest_S
 ```
 
 
+### Are older trucks disproportionately high-frequency entrants?
 
 ```{r}
 # 
@@ -1819,4 +2035,118 @@ ggplot(dest_state, aes(x = reorder(Dest_State, -count), y = count, fill = Dest_S
 
 
 ```
+
+### Do BS III/IV trucks carry heavier loads, amplifying emissions impact?
+
+```{r}
+
+```
+
+### Are diesel trucks dominant across all weight classes, and are CNG/LNG limited to lighter trucks?
+
+```{r}
+
+```
+
+### Which OD corridors are dominated by older emission-standard trucks?
+
+```{r}
+
+```
+
+### Are company fleets newer/cleaner than self-owned trucks?
+
+```{r}
+
+```
+
+### Do self-owned trucks tend to be older and more polluting?
+
+```{r}
+
+```
+
+### Do older trucks travel longer daily distances, magnifying emissions?
+
+```{r}
+
+```
+
+
+### Is there a commodity bias (e.g., construction, coal, perishables) towards older trucks?
+
+```{r}
+
+```
+
+### Are frequent night-shift entrants more likely to be older diesel trucks?
+
+```{r}
+
+```
+
+### What share of repeat entries is explained by a small percentage of trucks, and are these dirtier vehicles?
+
+```{r}
+
+```
+
+### Are empty return trips more common among older vehicles (higher VKT per payload)?
+
+```{r}
+
+```
+
+### Do certain makes/models have higher repeat frequency and tend to be older norms?
+
+```{r}
+
+```
+
+### How does maintenance frequency change with age and emission norms?
+
+```{r}
+
+```
+
+### Are high-GVW trucks disproportionately pre-BS-IV
+
+```{r}
+
+```
+
+### Do certain OD corridors see more empty backhauls?
+
+```{r}
+
+```
+
+
+### Do company fleets maintain trucks more regularly than self-owners?
+
+```{r}
+
+```
+
+### Are certain commodities (e.g., perishables) more likely to use newer BS-VI fleets?
+
+```{r}
+
+```
+
+### Do alternative fuel trucks cluster in specific corridors (Delhi-UP vs Delhi-RJ)?
+
+### Are long-distance trips (e.g. >500km/day) mostly diesel, short-hauls more CNG?
+
+### Do night-shift entries carry specific commodities (coal, cement)?
+
+### Are overloaded trucks (weight>permissible) concentrated in older fleets?
+
+### Do new BS-VI trucks have lower maintenance cycles than BS-III/IV?
+
+### Are specific OEMs leading adoption of BS-VI/alternative fuels?
+
+### Are lighter CNG trucks primarily last-mile (Delhi-NCR trips) vs heavy diesel long-haul?
+
+
 
